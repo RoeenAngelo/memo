@@ -5,7 +5,14 @@ const taskContainer = document.querySelector('#task-container');
 
 
 
-addTask.addEventListener('click', () => {
+addTask.addEventListener('click', createTask);
+inputTask.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      createTask();
+    }
+});
+
+function createTask() {
     
     let task = document.createElement('div');
     task.classList.add('task'); // add a class
@@ -29,12 +36,12 @@ addTask.addEventListener('click', () => {
     })
 
     deleteBtn.addEventListener('click', (e) => {
-        e.target.parentElement.parentElement.remove();
+        e.target.parentElement.parentElement.remove(); // can also use deleteBtn instead of e.target
     })
     
     inputTask.value === '' ? alert('Please Enter a Task') : taskContainer.appendChild(task);
     inputTask.value ='';
-})
+}
 
 
 
