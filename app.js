@@ -6,6 +6,8 @@ const taskContainer = document.querySelector('#task-container');
 
 
 addTask.addEventListener('click', createTask);
+
+// add task by typing and pressing enterx   
 inputTask.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
       createTask();
@@ -16,6 +18,7 @@ function createTask() {
     
     let task = document.createElement('div');
     task.classList.add('task'); // add a class
+    // task.setAttribute('class', 'task'); another way of adding a class
 
     let li = document.createElement('li');
     li.innerText = `${inputTask.value}`;
@@ -32,7 +35,8 @@ function createTask() {
     task.appendChild(deleteBtn);
 
     checkBtn.addEventListener('click', () => {
-        checkBtn.parentElement.style.textDecoration = 'line-through'
+        task.classList.toggle('task-active')
+     // checkBtn.parentElement.style.textDecoration = 'line-through'; this was used before toggle was introduced
     })
 
     deleteBtn.addEventListener('click', (e) => {
