@@ -101,6 +101,6 @@ body {
 
 /* Javascript Styling */
 
-.task-active {
+.li-active {
     text-decoration: line-through;
 } 

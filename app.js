@@ -18,14 +18,14 @@ function createTask() {
     
     let task = document.createElement('div');
     task.classList.add('task'); // add a class
-    // task.setAttribute('class', 'task'); another way of adding a class
 
     let li = document.createElement('li');
+    li.classList.add('li');
     li.innerText = `${inputTask.value}`;
     task.appendChild(li);
 
     let checkBtn = document.createElement('button');
-    checkBtn.innerHTML = '<i class="fa-solid fa-check"></i>'
+    checkBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
     checkBtn.setAttribute('class', 'check-task'); // another way of adding a class
     task.appendChild(checkBtn);
 
@@ -34,8 +34,10 @@ function createTask() {
     deleteBtn.className = 'delete-task'; // another way of adding a class
     task.appendChild(deleteBtn);
 
+    console.log(task.classList);
+
     checkBtn.addEventListener('click', () => {
-        task.classList.toggle('task-active')
+        li.classList.toggle('li-active')
      // checkBtn.parentElement.style.textDecoration = 'line-through'; this was used before toggle was introduced
     })
 
