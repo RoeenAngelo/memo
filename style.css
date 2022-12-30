@@ -31,13 +31,69 @@ body {
     font-size: 1.5rem;
     border-radius: 5px;
     padding: 5px;
-    border: solid 2px;
+    border: solid 2px green;
     flex: .5;
+    background-color: green;
+    color: white;
 }
 
 #add-task:hover {
     cursor: pointer;
-    background-color: green;
+    background-color: white;
+    color: green;
+    transition: all 0.3s ease
+}
+
+/* Styles for added task */
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    border: solid black;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 3px;
+
+}
+
+.task li {
+    list-style: none;
+    padding: 5px;
+    flex: 6;
+    font-size: 1.3rem;
+}
+
+.task button {
+    flex: .5;
+    border-radius: 10px;
+    border: solid 2px;
+    background-color: white;
+    font-size: 1.3rem;
+}
+
+.task .check-task {
+    background-color: orange;
     color: white;
+}
+
+.check-task:hover {
+    cursor: pointer;
+    background-color: white;
+    color: orange;
+    transition: all 0.3s ease
+}
+
+.task .delete-task {
+    background-color: red;
+    color: white;
+}
+
+.delete-task:hover {
+    cursor: pointer;
+    background-color: white;
+    color: red;
     transition: all 0.3s ease
 }
