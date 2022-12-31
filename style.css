@@ -44,7 +44,7 @@ body {
     transition: all 0.3s ease
 }
 
-/* Styles for added task */
+/* Styles for JS added task */
 
 .task {
     display: flex;
@@ -101,6 +101,6 @@ body {
 
 /* Javascript Styling */
 
-.li-active {
+.line-through {
     text-decoration: line-through;
 } 

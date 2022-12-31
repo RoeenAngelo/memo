@@ -7,7 +7,7 @@ const taskContainer = document.querySelector('#task-container');
 
 addTask.addEventListener('click', createTask);
 
-// add task by typing and pressing enterx   
+// add task by typing and pressing enter   
 inputTask.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
       createTask();
@@ -29,24 +29,34 @@ function createTask() {
     checkBtn.setAttribute('class', 'check-task'); // another way of adding a class
     task.appendChild(checkBtn);
 
+
     let deleteBtn = document.createElement('button');
     deleteBtn.innerHTML = '<i class="fa-regular fa-trash-can"></i>'
     deleteBtn.className = 'delete-task'; // another way of adding a class
     task.appendChild(deleteBtn);
 
-    console.log(task.classList);
+    inputTask.value === '' ? alert('Please Enter a Task') : taskContainer.appendChild(task);
+    inputTask.value ='';
 
-    checkBtn.addEventListener('click', () => {
-        li.classList.toggle('li-active')
+    
+    checkBtn.addEventListener('click', (e) => {
+        li.classList.toggle('line-through')
      // checkBtn.parentElement.style.textDecoration = 'line-through'; this was used before toggle was introduced
+        console.log(checkBtn.parentElement)
+        console.log(e.target);
+        console.log(e.target.parentElement);
+        console.log(e.target.parentElement.parentElement);
     })
 
     deleteBtn.addEventListener('click', (e) => {
         e.target.parentElement.parentElement.remove(); // can also use deleteBtn instead of e.target
+        console.log(deleteBtn.parentElement);
+        console.log(e.target)
+        console.log(e.target.parentElement);
+        console.log(e.target.parentElement.parentElement);
     })
     
-    inputTask.value === '' ? alert('Please Enter a Task') : taskContainer.appendChild(task);
-    inputTask.value ='';
+    
 }
 
 
